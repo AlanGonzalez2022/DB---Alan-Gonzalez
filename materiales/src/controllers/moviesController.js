@@ -13,5 +13,28 @@ let moviesController = {
             res.render('moviesDetail', {peliculas: peliculas})
         })
         .catch(error=> res.send(error));
+    },
+    new: function(req,res) {
+        db.Peliculas.findAll({
+            order: [
+                ['release_date', 'DESC']
+            ]
         }
+        ).then(function(Peliculas){
+            res.render('newestMovies', {peliculas: peliculas})
+        })
+        .catch(error=> res.send(error));
+    },
+    recomended: function(req,res) {
+        db.Peliculas.findAll({
+            order: [
+                ['release_date', 'ASC']
+            ],
+            limit: 5
+        }
+        ).then(function(Peliculas){
+            res.render('recommendedMovies', {peliculas: peliculas})
+        })
+        .catch(error=> res.send(error));
+    },
 }
