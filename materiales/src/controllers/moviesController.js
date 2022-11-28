@@ -38,3 +38,5 @@ let moviesController = {
         .catch(error=> res.send(error));
     },
 }
+
+module.exports = moviesController;

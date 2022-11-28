@@ -25,5 +25,5 @@ module.exports = (sequelize, dataTypes) =>{
 
     const Genero = sequelize.define(alias, cols, config);
 
-    return Gener;
+    return Genero;
 }
